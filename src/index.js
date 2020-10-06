@@ -9,8 +9,8 @@ import App from "./app";
 import { GlobalStyles } from "./global-styles";
 
 const store = createStore(
-  reducers /* preloadedState, */,
-  +window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  reducers,
+  { auth: { authenticated: localStorage.getItem("token") } },
   applyMiddleware(reduxThunk)
 );
 
