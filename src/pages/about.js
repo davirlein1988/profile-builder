@@ -1,7 +1,5 @@
 import React from "react";
 import { FooterContainer } from "../containers/footer";
-const Signup = () => {
+export default function About() {
   return <FooterContainer />;
-};
-
-export default Signup;
+}

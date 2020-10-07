@@ -1,7 +1,8 @@
 import React from "react";
+import { FooterContainer } from "../containers/footer";
 
 const Signin = () => {
-  return <div>Sign in page</div>;
+  return <FooterContainer />;
 };
 
 export default Signin;
