@@ -19,7 +19,7 @@ export function FooterContainer() {
           <Footer.Link href="mailto:lein.davir@gmail.com">e-mail</Footer.Link>
         </Footer.Column>
       </Footer.Row>
-      <Footer.Text>Social Media</Footer.Text>
+      <Footer.Title>Social Media</Footer.Title>
       <Footer.Row>
         <Footer.Column>
           <Footer.Link href="https://facebook.com/lein-davir" target="blank">
