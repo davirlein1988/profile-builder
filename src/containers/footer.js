@@ -7,13 +7,16 @@ export function FooterContainer() {
       <Footer.Title>Question? Contact us</Footer.Title>
       <Footer.Row>
         <Footer.Column>
-          <Footer.Link>FAQ</Footer.Link>
+          <Footer.Link href="#faqs">FAQ</Footer.Link>
         </Footer.Column>
         <Footer.Column>
-          <Footer.Link>About</Footer.Link>
+          <Footer.Link href="/about">About</Footer.Link>
         </Footer.Column>
         <Footer.Column>
-          <Footer.Link>Blog</Footer.Link>
+          <Footer.Link href="/blog">Blog</Footer.Link>
+        </Footer.Column>
+        <Footer.Column>
+          <Footer.Link href="mailto:lein.davir@gmail.com">e-mail</Footer.Link>
         </Footer.Column>
       </Footer.Row>
       <Footer.Text>Social Media</Footer.Text>
