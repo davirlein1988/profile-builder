@@ -36,10 +36,42 @@ export const Row = styled.div`
 `;
 
 export const Link = styled.a`
-  color: #757575;
-  margin-bottom: 20px;
-  font-size: 13px;
-  text-decoration: none;
+  position: relative;
+  top: 0;
+  left: -20px;
+  display: inline-block;
+  height: 70px;
+  width: 70px;
+  margin: 10px auto;
+  line-height: 70px;
+  border-radius: 50%;
+  color: #fff;
+  background-color: #1a232e;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    border-radius: 50%;
+    opacity: 50;
+    box-shadow: 0 0 0 1px #fff;
+    transition: all 0.2s ease-in-out;
+  }
+  &:hover {
+    background-color: #0066c0;
+    color: #fff;
+  }
+  &:hover:after {
+    opacity: 50;
+    transform: scale(1.12);
+    transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+  }
 `;
 
 export const Title = styled.p`
@@ -59,10 +91,15 @@ export const Break = styled.div`
   height: 0;
 `;
 const iconstyle = () => `
-color: white;
-  width: 30px;
-  height: 30px;
-  font-weight: bold;`;
+  color: white;
+  width: 40px;
+  height: 40px;
+  font-weight: bold;
+  &:hover {
+    background-color: #111;
+    color: #fff;
+  }
+  `;
 export const FacebookIcon = styled(FacebookWithCircle)`
   ${iconstyle()}
 `;
