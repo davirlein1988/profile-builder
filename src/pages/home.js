@@ -1,7 +1,8 @@
 import React from "react";
+import { FooterContainer } from "../containers/footer";
 
 const Home = () => {
-  return <div>Homepage</div>;
+  return <FooterContainer />;
 };
 
 export default Home;
