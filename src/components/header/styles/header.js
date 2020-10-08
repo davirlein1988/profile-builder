@@ -91,7 +91,7 @@ export const SearchIcon = styled.button`
 
 export const ButtonLink = styled(ReactRouterLink)`
   display: block;
-  background-color: #1a232e;
+  background-color: #ff9900;
   width: 84px;
   height: fit-content;
   color: white;
