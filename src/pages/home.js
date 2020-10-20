@@ -9,12 +9,11 @@ const Home = () => {
     <>
       <HeaderContainer>
         <Feature>
-          <Feature.Title>
-            Ready to build wonderful pieces of software?
-          </Feature.Title>
+          <Feature.Title>Davirlein Prada</Feature.Title>
           <Feature.SubTitle>
-            Developing software that enhances life and creates positive impacts
-            in out environment
+            Computer Science bachelor's degree, Full-stack developer with 4
+            years of experience in software development, building jaw dropping
+            UI/UX
           </Feature.SubTitle>
         </Feature>
       </HeaderContainer>

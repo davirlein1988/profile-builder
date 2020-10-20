@@ -1,5 +1,5 @@
 import React from "react";
-import { FooterContainer } from "../containers/footer";
+import { FooterProfileContainer } from '../containers/profile-footer';
 export default function Profile() {
-  return <FooterContainer />;
+  return <FooterProfileContainer />;
 }
