@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Container, Tree, Box, Row, Column, TitleWrapper, Title, Text, FormWrapper, Form } from "./styles/contact"
 
 export default function Contact({children, ...restProps}) {
@@ -38,10 +38,11 @@ Contact.Form = function({
   setRnSubject,
   rnMessage,
   setRnMessage,
+  handleSubmit,
   ...restProps
 }){
 
-  return <Form {...restProps}>
+  return <Form {...restProps} onSubmit={handleSubmit}>
     <label htmlFor="item01">
       <input 
       type="text"
@@ -73,7 +74,7 @@ Contact.Form = function({
       />
     </label>
     <label htmlFor="item04">
-      <input 
+      <textarea 
       type="text"
       name="name"
       id="item04"
@@ -82,6 +83,13 @@ Contact.Form = function({
       placeholder="Here goes a simple message"
       />
     </label>
+    <button 
+      className="rn-button-style--2 btn-solid" 
+      type="submit" 
+      value="submit" 
+      name="submit" 
+      id="mc-embedded-subscribe"
+      >Submit</button>
   </Form>
 }
 

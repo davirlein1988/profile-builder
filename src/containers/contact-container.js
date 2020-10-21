@@ -1,8 +1,18 @@
-import React from 'react';
+import React, {useState } from 'react';
 
 import { Contact } from "../components";
 
+
+
 export function ContactContainer() {
+  const [rnName, setRnName ] = useState(""),
+    [rnEmail, setRnEmail ] = useState(""),
+    [rnSubject, setRnSubject ] = useState(""),
+    [rnMessage, setRnMessage ] = useState(""),
+    handleSubmit = e => {
+      e.preventDefault()
+      console.log("formData:", {rnName, rnEmail, rnSubject, rnMessage})
+    }
   return (
     <Contact id="contact" className="fix">
       <div className="rn-contact-area ptb--120 bg_color--1">
@@ -20,7 +30,17 @@ export function ContactContainer() {
                 </Contact.TitleWrapper>
 
                 <Contact.FormWrapper className="form-wrapper">
-                  <Contact.Form />
+                  <Contact.Form
+                  rnName={rnName}
+                  setRnName={setRnName}
+                  rnEmail={rnEmail}
+                  setRnEmail={setRnEmail}
+                  rnSubject={rnSubject}
+                  setRnSubject={setRnSubject}
+                  rnMessage={rnMessage}
+                  setRnMessage={setRnMessage}
+                  handleSubmit={handleSubmit}
+                   />
                 </Contact.FormWrapper>
 
               </Contact.Column>
