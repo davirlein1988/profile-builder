@@ -1,165 +1,88 @@
-import React from "react";
-import {
-  Form,
-  Fieldset,
-  Legend,
-  Control,
-  Input,
-  Label,
-  TextArea,
-} from "./styles/contact";
+import React, {useState} from 'react';
+import { Container, Tree, Box, Row, Column, TitleWrapper, Title, Text, FormWrapper, Form } from "./styles/contact"
 
-export default function Contact({ children, ...restProps }) {
-  return <Form {...restProps}>{children}</Form>;
+export default function Contact({children, ...restProps}) {
+  return <Container {...restProps}>{children}</Container>
 }
-Contact.Fieldset = function ContactFieldset({ children, ...restProps }) {
-  return <Fieldset {...restProps}>{children}</Fieldset>;
-};
 
-Contact.Legend = function ContactLegend({ children, ...restProps }) {
-  return <Legend {...restProps}>{children}</Legend>;
-};
-Contact.Control = function ContactControl({ children, ...restProps }) {
-  return <Control {...restProps}>{children}</Control>;
-};
+Contact.Tree = function({children, ...restProps}){
+  return <Tree {...restProps}>{children}</Tree>
+}
+Contact.Box = function({children, ...restProps}){
+  return <Box {...restProps}>{children}</Box>
+}
+Contact.Row = function({children, ...restProps}){
+  return <Row {...restProps}>{children}</Row>
+}
+Contact.Column = function({children, ...restProps}){
+  return <Column {...restProps}>{children}</Column>
+}
+Contact.TitleWrapper = function({children, ...restProps}){
+return <TitleWrapper {...restProps}>{children}</TitleWrapper>
+}
+Contact.Title = function({children, ...restProps}){
+return <Title {...restProps}>Hit me a Message</Title>
+}
+Contact.Text = function({children, ...restProps}){
+  return <Text {...restProps}>{children}</Text>
+}
+Contact.FormWrapper = function({children, ...restProps}){
+  return <FormWrapper {...restProps}>{children}</FormWrapper>
+}
+Contact.Form = function({
+  rnName, 
+  setRnName,
+  rnEmail,
+  setRnEmail,
+  rnSubject,
+  setRnSubject,
+  rnMessage,
+  setRnMessage,
+  ...restProps
+}){
 
-Contact.Input = function ContactInput({ children, ...restProps }) {
-  return <Input {...restProps}>{children}</Input>;
-};
-Contact.Label = function ContactLabel({ children, ...restProps }) {
-  return <Label {...restProps}>{children}</Label>;
-};
-Contact.TextArea = (function ContactTextArea({ children, ...restProps }) {
-  return <TextArea {...restProps}>{children}</TextArea>;
-})`
-var NameInput = React.createClass({
-  displayName: "NameInput",
-  handleTextChange: function () {
-    var x = this.refs.nameField.getDOMNode().value;
+  return <Form {...restProps}>
+    <label htmlFor="item01">
+      <input 
+      type="text"
+      name="name"
+      id="item01"
+      value={rnName}
+      onChange={({target}) => setRnName(target.value)}
+      placeholder="Jane Doe"
+      />
+    </label>
+    <label htmlFor="item02">
+      <input 
+      type="text"
+      name="email"
+      id="item02"
+      value={rnEmail}
+      onChange={({target}) => setRnEmail(target.value)}
+      placeholder="youremail@mail.com"
+      />
+    </label>
+    <label htmlFor="item03">
+      <input 
+      type="text"
+      name="subject"
+      id="item03"
+      value={rnSubject}
+      onChange={({target}) => setRnSubject(target.value)}
+      placeholder="Contact Reason"
+      />
+    </label>
+    <label htmlFor="item04">
+      <input 
+      type="text"
+      name="name"
+      id="item04"
+      value={rnMessage}
+      onChange={({target}) => setRnMessage(target.value)}
+      placeholder="Here goes a simple message"
+      />
+    </label>
+  </Form>
+}
 
-    if (x != "") {
-      this.refs.nameField.getDOMNode().className = "active";
-    } else {
-      this.refs.nameField.getDOMNode().className = "";
-    }
 
-    this.props.onUserInput(x);
-  },
-  render: function () {
-    return React.createElement(
-      "div",
-      { className: "control" },
-      React.createElement("input", {
-        type: "text",
-        id: "name",
-        ref: "nameField",
-        placeholder: "What should I call you?",
-        autoFocus: true,
-        required: true,
-        onChange: this.handleTextChange,
-      }),
-      React.createElement("label", { for: "name" }, "Name")
-    );
-  },
-});
-
-var EmailInput = React.createClass({
-  displayName: "EmailInput",
-  handleTextChange: function () {
-    var x = this.refs.emailField.getDOMNode().value;
-
-    if (x != "") {
-      this.refs.emailField.getDOMNode().className = "active";
-    } else {
-      this.refs.emailField.getDOMNode().className = "";
-    }
-
-    this.props.onUserInput("", x);
-  },
-  render: function () {
-    return React.createElement(
-      "div",
-      { className: "control" },
-      React.createElement("input", {
-        type: "email",
-        id: "email",
-        ref: "emailField",
-        placeholder: "Where can I reach you?",
-        required: true,
-        onChange: this.handleTextChange,
-      }),
-      React.createElement("label", { for: "email" }, "e-mail")
-    );
-  },
-});
-
-var MessageArea = React.createClass({
-  displayName: "MessageArea",
-  handleTextChange: function () {
-    var x = this.refs.messageBox.getDOMNode().value;
-
-    if (x != "") {
-      this.refs.messageBox.getDOMNode().className = "active";
-    } else {
-      this.refs.messageBox.getDOMNode().className = "";
-    }
-
-    this.props.onUserInput("", "", x);
-  },
-  render: function () {
-    return React.createElement(
-      "div",
-      { className: "control" },
-      React.createElement("textarea", {
-        id: "message",
-        ref: "messageBox",
-        placeholder: "What's on your mind?",
-        required: true,
-        onChange: this.handleTextChange,
-      }),
-      React.createElement("label", { for: "message" }, "Message")
-    );
-  },
-});
-
-var ContactForm = React.createClass({
-  displayName: "ContactForm",
-  getInitialState: function () {
-    return {
-      nameText: "",
-      emailText: "",
-      messageText: "",
-    };
-  },
-  handleUserInput: function (nameText, emailText, messageText) {
-    this.setState({
-      nameText: nameText,
-      emailText: emailText,
-      messageText: messageText,
-    });
-  },
-  render: function () {
-    return React.createElement(
-      "form",
-      { action: "/" },
-
-      React.createElement(
-        "fieldset",
-        null,
-        React.createElement("legend", null, "Contact me."),
-
-        React.createElement(NameInput, { onUserInput: this.handleUserInput }),
-        React.createElement(EmailInput, { onUserInput: this.handleUserInput }),
-        React.createElement(MessageArea, { onUserInput: this.handleUserInput }),
-
-        React.createElement("input", { type: "submit", value: "send" })
-      )
-    );
-  },
-});
-
-React.render(
-  React.createElement(ContactForm, null),
-  document.getElementById("stage")
-);
-`;
