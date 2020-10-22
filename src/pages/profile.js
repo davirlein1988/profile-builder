@@ -1,11 +1,13 @@
-import React from "react";
+import React from 'react';
 import { FooterProfileContainer } from '../containers/profile-footer';
 import { ContactContainer } from '../containers/contact-container';
+import { NewsContainer } from '../containers/news-container';
 export default function Profile() {
   return (
     <div className="active-dark">
+      <NewsContainer />
       <ContactContainer />
       <FooterProfileContainer />
     </div>
-  )
+  );
 }
