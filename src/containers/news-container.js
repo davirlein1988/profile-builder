@@ -13,7 +13,7 @@ export function NewsContainer() {
   }
   useEffect(() => {
     getNews();
-  });
+  }, []);
   return (
     <News id="blog" className="fix">
       <News.Box className="rn-blog-area ptb--120 bg_color--5 mb-dec--30">
