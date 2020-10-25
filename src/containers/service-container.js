@@ -13,7 +13,8 @@ export function ServiceContainer() {
                 <h2 className="title">What Value do I add?</h2>
                 <p>
                   Code with the hightest industry standards, reusable, scalable,
-                  testable and with the best industry practices
+                  testable and with the best industry practices. Agile
+                  development and an excellent team player.
                 </p>
                 <p>Development stack</p>
               </div>
