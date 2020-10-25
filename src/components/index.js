@@ -7,3 +7,4 @@ export { default as Contact } from './contact';
 export { default as News } from './news';
 export { default as Projects } from './projects';
 export { default as Service } from './service';
+export { default as ServiceItem } from './service-item';

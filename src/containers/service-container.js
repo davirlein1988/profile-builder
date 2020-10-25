@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Service } from '../components';
+import { Service, ServiceItem } from '../components';
 
 export function ServiceContainer() {
   return (
@@ -16,13 +16,16 @@ export function ServiceContainer() {
                   testable and with the best industry practices. Agile
                   development and an excellent team player.
                 </p>
-                <p>Development stack</p>
+                <h4>Development stack</h4>
               </div>
             </Service.Col>
           </Service.Row>
           <Service.Row className="row creative-service">
             <Service.Col className="col-lg-12">
-              List of Services....
+              <ServiceItem
+                item="6"
+                column="col-lg-4 col-md-6 col-sm-6 col-12 text-left"
+              />
             </Service.Col>
           </Service.Row>
         </Service.Box>
