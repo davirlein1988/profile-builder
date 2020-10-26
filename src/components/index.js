@@ -8,3 +8,4 @@ export { default as News } from './news';
 export { default as Projects } from './projects';
 export { default as Service } from './service';
 export { default as ServiceItem } from './service-item';
+export { default as About } from './about';
