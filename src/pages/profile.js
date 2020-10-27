@@ -7,7 +7,7 @@ import { ServiceContainer } from '../containers/service-container';
 import { AboutContainer } from '../containers/about-container';
 export default function Profile() {
   return (
-    <div className="active-dark">
+    <div className="active-light">
       <AboutContainer />
       <ServiceContainer />
       <ProjectsContainer />
