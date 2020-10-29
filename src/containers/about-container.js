@@ -1,5 +1,5 @@
 import React from 'react';
-import { About } from '../components';
+import { About, ProfileTabs } from '../components';
 
 export function AboutContainer() {
   const title = 'About Me',
@@ -27,7 +27,7 @@ export function AboutContainer() {
                     <p className="description">{description}</p>
                   </About.Box>
                   <About.Box className="row mt--30">
-                    Here goes inner tabs
+                    <ProfileTabs tabStyle="tab-style--1" />
                   </About.Box>
                 </About.Box>
               </About.Col>
