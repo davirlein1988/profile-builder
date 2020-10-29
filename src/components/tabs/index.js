@@ -5,7 +5,8 @@ export default function TabsProfile({ tabStyle }) {
   const tab1 = 'Main skills',
     tab2 = 'Awards',
     tab3 = 'Experience',
-    tab4 = 'Education & Certification';
+    tab4 = 'Education & Certification',
+    tab5 = 'Soft Skills';
 
   return (
     <div>
@@ -20,6 +21,7 @@ export default function TabsProfile({ tabStyle }) {
                   <Tab>{tab2}</Tab>
                   <Tab>{tab3}</Tab>
                   <Tab>{tab4}</Tab>
+                  <Tab>{tab5}</Tab>
                 </TabList>
 
                 <TabPanel>
@@ -43,11 +45,20 @@ export default function TabsProfile({ tabStyle }) {
                           Backend Developmet{' '}
                           <span>
                             {' '}
-                            - Rich API integration with front-end and mobile
-                            apps
+                            - Rich API integration with front-end aplications
+                            and mobile apps
                           </span>
                         </a>
-                        I like to move it move it.
+                      </li>
+                      <li>
+                        <a href="/service">
+                          Movil Developmet{' '}
+                          <span>
+                            {' '}
+                            - Development with React-Native - Flutter
+                          </span>
+                        </a>
+                        Effective, Efficient and good looking
                       </li>
                     </ul>
                   </div>
@@ -122,6 +133,40 @@ export default function TabsProfile({ tabStyle }) {
                           </span>
                         </a>{' '}
                         2013
+                      </li>
+                    </ul>
+                  </div>
+                </TabPanel>
+                <TabPanel>
+                  <div className="single-tab-content">
+                    <ul>
+                      <li>
+                        <a href="/service">
+                          English Language
+                          <span>
+                            {' '}
+                            - Writting, Speaking, Simultaoneus Translation
+                          </span>
+                        </a>{' '}
+                        2018 - 2022
+                      </li>
+                      <li>
+                        <a href="/service">
+                          Agile Development
+                          <span> - Scrum Kanban</span>
+                        </a>{' '}
+                      </li>
+                      <li>
+                        <a href="/service">
+                          German Language
+                          <span> - A2 currenlty learning</span>
+                        </a>{' '}
+                      </li>
+                      <li>
+                        <a href="/service"> Leadership - Public Speaking</a>{' '}
+                      </li>
+                      <li>
+                        <a href="/service"> Descision Making</a>{' '}
                       </li>
                     </ul>
                   </div>
