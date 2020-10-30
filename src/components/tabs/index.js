@@ -145,10 +145,9 @@ export default function TabsProfile({ tabStyle }) {
                           English Language
                           <span>
                             {' '}
-                            - Writting, Speaking, Simultaoneus Translation
+                            - Writting, Speaking, Simultaneous Translation
                           </span>
                         </a>{' '}
-                        2018 - 2022
                       </li>
                       <li>
                         <a href="/service">
