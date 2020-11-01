@@ -11,3 +11,4 @@ export { default as ServiceItem } from './service-item';
 export { default as About } from './about';
 export { default as ProfileTabs } from './tabs';
 export { default as PageHelmet } from './helmet';
+export { default as HeaderTree } from './header-tree';
