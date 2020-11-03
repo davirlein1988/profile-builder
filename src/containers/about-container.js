@@ -6,7 +6,7 @@ export function AboutContainer() {
     description =
       'Computer Science bachelor degree in progress, Full-stack developer with 4 years of experience in software development, and more than 2 years of experience with Javascript. Experience with nodeJS, Front end with React.js Vue.js, CSS/SCSS preprocessors. Use of relational databases with SQL/Postgres, non-relational databases with MongoDB and Firebase, Express, Mongoose. Mobile development with react native. Constantly learning Linux, bash, and C programming. ';
   return (
-    <About id="abour" className="fix">
+    <About id="about" className="fix">
       <About.Box className="about-area ptb--120  bg_color--1">
         <About.Box className="about-wrapper">
           <About.Box className="container">
