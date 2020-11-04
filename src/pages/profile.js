@@ -15,7 +15,7 @@ const SlideList = [
     description:
       'Not only developing software, Creating wonderful experiences making clients and customers happy',
     buttonText: "let's rock & roll",
-    buttonLink: '/signin',
+    buttonLink: `${process.env.PUBLIC_URL}#contact`,
   },
 ];
 export default function Profile() {
@@ -42,10 +42,13 @@ export default function Profile() {
                         titleClass="title"
                         text="Hi, This is Lein..."
                         items={[
-                          'Dr, Surgeon, Neurosurgeon',
+                          'RoR Developer',
                           'Js Full Stack Developer',
-                          'UI/UX Designer',
+                          'NodeJS Developer',
                           'English/Spanish/German Translator',
+                          'Front-End Developer',
+                          'ReactJs - React-Native Dev',
+                          'VueJS - Vuex - Vuetify',
                         ]}
                       />
                       <Slidder.SubTitle>

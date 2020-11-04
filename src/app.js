@@ -1,26 +1,27 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Home, SignIn, SignUp, Blog, About, Profile } from "./pages";
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import * as ROUTES from './constants/routes';
+import { Home, SignIn, SignUp, Blog, About, Profile } from './pages';
 export default function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/">
+        <Route exact path={`${ROUTES.HOME}`}>
           <Home />
         </Route>
-        <Route exact path="/signin">
+        <Route exact path={`${ROUTES.SIGN_IN}`}>
           <SignIn />
         </Route>
-        <Route exact path="/signup">
+        <Route exact path={`${ROUTES.SIGN_UP}`}>
           <SignUp />
         </Route>
-        <Route exact path="/blog">
+        <Route exact path={`${ROUTES.BLOG}`}>
           <Blog />
         </Route>
-        <Route exact path="/about">
+        <Route exact path={`${ROUTES.ABOUT}`}>
           <About />
         </Route>
-        <Route exact path="/profile">
+        <Route exact path={`${ROUTES.PROFILE}`}>
           <Profile />
         </Route>
       </Switch>

@@ -1,11 +1,13 @@
-import styled from "styled-components/macro";
-import { Link as ReactRouterLink } from "react-router-dom";
+import styled from 'styled-components/macro';
+import { Link as ReactRouterLink } from 'react-router-dom';
 
 export const Background = styled.div`
   display: flex;
   flex-direction: column;
   background: url(${({ src }) =>
-      src ? `../images/tech/${src}.png` : "../images/background.png"})
+      src
+        ? `${src}`
+        : `${process.env.PUBLIC_URL}/assets/images/bg/aoteren.jpg`})
     top left / cover no-repeat;
   @media (max-width: 1100px) {
     ${({ dontShowOnSmallViewPort }) =>
@@ -34,7 +36,7 @@ export const Link = styled.p`
   color: #fff;
   text-decoration: none;
   margin-right: 30px;
-  font-weight: ${({ active }) => (active === "true" ? "700" : "normal")};
+  font-weight: ${({ active }) => (active === 'true' ? '700' : 'normal')};
   cursor: pointer;
 
   &:hover {
@@ -58,10 +60,10 @@ export const SearchInput = styled.input`
   transition: width 0.5s;
   height: 30px;
   font-size: 14px;
-  margin-left: ${({ active }) => (active === true ? "10px" : "0")};
-  padding: ${({ active }) => (active === true ? "0 10px" : "0")};
-  opacity: ${({ active }) => (active === true ? "1" : "0")};
-  width: ${({ active }) => (active === true ? "200px" : "0px")};
+  margin-left: ${({ active }) => (active === true ? '10px' : '0')};
+  padding: ${({ active }) => (active === true ? '0 10px' : '0')};
+  opacity: ${({ active }) => (active === true ? '1' : '0')};
+  width: ${({ active }) => (active === true ? '200px' : '0px')};
 `;
 
 export const Search = styled.div`
@@ -91,11 +93,11 @@ export const SearchIcon = styled.button`
 
 export const ButtonLink = styled(ReactRouterLink)`
   display: block;
-  background-color: #ff9900;
+  background-color: transparent;
   width: 84px;
   height: fit-content;
   color: white;
-  border: 0;
+  border: 1px solid #d4d4d4;
   font-size: 15px;
   border-radius: 3px;
   padding: 8px 17px;
@@ -104,7 +106,7 @@ export const ButtonLink = styled(ReactRouterLink)`
   box-sizing: border-box;
 
   &:hover {
-    background: #0066c0;
+    background: #f9004d;
   }
 `;
 
