@@ -6,10 +6,13 @@ export function NewsContainer() {
   const [items, setItems] = useState([]);
 
   async function getNews() {
-    const { data } = await axios.get(
-      'https://jsonplaceholder.typicode.com/posts?_limit=4'
+    const {
+      data: { articles },
+    } = await axios.get(
+      `http://newsapi.org/v2/everything?q=javascript&q=technology&from=2020-10-04&sortBy=publishedAt&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`
     );
-    setItems(data);
+    console.log(process.env);
+    setItems(articles);
   }
   useEffect(() => {
     getNews();
@@ -39,20 +42,25 @@ export function NewsContainer() {
                       <a href="/blog-details">
                         <img
                           className="w-100"
-                          src={`/assets/images/blog/blog-${
-                            0 + item.id.toString()
-                          }.jpg`}
-                          alt="Blog Images"
+                          src={item && item.urlToImage}
+                          alt={item && item.title}
                         />
                       </a>
                     </div>
                     <div className="content">
-                      <p className="blogtype">{item.title.substring(1, 10)}</p>
+                      <p className="blogtype">
+                        {item && item.title.substring(1, 10)}
+                      </p>
                       <h4 className="title">
-                        <a href="/blog-details">{item.body.substring(1, 80)}</a>
+                        <a href="/blog-details">
+                          {item.description.substring(1, 80)}
+                        </a>
                       </h4>
                       <div className="blog-btn">
-                        <a className="rn-btn text-white" href="/blog-details">
+                        <a
+                          className="rn-btn text-white"
+                          href={item && item.url}
+                        >
                           Read More
                         </a>
                       </div>

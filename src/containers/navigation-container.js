@@ -29,8 +29,7 @@ export function NavigationContainer({ children, ...restProps }) {
         alt="Digital Agency"
       />
     ),
-    actionLink =
-      'https://themeforest.net/checkout/from_item/25457315?license=regular',
+    actionLink = `${process.env.PUBLIC_URL}#contact`,
     menuTrigger = () =>
       document.querySelector('.header-wrapper').classList.toggle('menu-open'),
     closeMenuTrigger = () =>
@@ -43,10 +42,8 @@ export function NavigationContainer({ children, ...restProps }) {
     window.addEventListener('scroll', function () {
       let value = window.scrollY;
       if (value > 100) {
-        console.log('Scroll', value);
         document.querySelector('.header--fixed').classList.add('sticky');
       } else {
-        console.log('Scroll', value);
         document.querySelector('.header--fixed').classList.remove('sticky');
       }
     });
@@ -84,7 +81,7 @@ export function NavigationContainer({ children, ...restProps }) {
             <HeaderTree.List className="social-share social-style--2 color-black d-flex justify-content-start liststyle">
               {SocialShare.map((val, i) => (
                 <HeaderTree.ListItem key={i}>
-                  <HeaderTree.Link href={`${val.link}`}>
+                  <HeaderTree.Link target="blank" href={`${val.link}`}>
                     {val.Social}
                   </HeaderTree.Link>
                 </HeaderTree.ListItem>
