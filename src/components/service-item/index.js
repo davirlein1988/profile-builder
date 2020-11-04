@@ -3,48 +3,52 @@ import { FaNodeJs, FaVuejs } from 'react-icons/fa';
 import { DiJavascript } from 'react-icons/di';
 import { SiMongodb, SiReact } from 'react-icons/si';
 import { FiSmartphone } from 'react-icons/fi';
+import { Icon } from './styles/service-item';
 
 const ServiceList = [
   {
     icon: <FiSmartphone />,
-    title: 'Business Stratagy',
-    description:
-      'I throw myself down among the tall grass by the stream as I lie close to the earth.',
+    title: 'Mobile Development',
+    description: 'Development with react-native and a little bit of flutter',
+    color: '#f9004d',
   },
   {
     icon: <FaNodeJs />,
-    title: 'Website Development',
+    title: 'Backend Development',
     description:
-      'I throw myself down among the tall grass by the stream as I lie close to the earth.',
+      'Uso of NodeJs with Express, mongo, postgresql, redis and elasticsearch',
+    color: '#43853d',
   },
   {
     icon: <SiReact />,
-    title: 'Marketing & Reporting',
+    title: 'Front-End Development',
     description:
-      'I throw myself down among the tall grass by the stream as I lie close to the earth.',
+      "Building jaw dropping UI's with modern frameworks, material-design, bootstrap",
+    color: '#61dafb',
   },
   {
     icon: <SiMongodb />,
-    title: 'Mobile App Development',
+    title: 'Database Magement',
     description:
-      'I throw myself down among the tall grass by the stream as I lie close to the earth.',
+      'Building scalable application with help of non relational databases',
+    color: '#13aa52',
   },
   {
     icon: <FaVuejs />,
-    title: 'Marketing & Reporting',
-    description:
-      'I throw myself down among the tall grass by the stream as I lie close to the earth.',
+    title: 'Front-End Development',
+    description: 'Building scalables UI`s with Vuex, Vuetify and more',
+    color: '#35495e',
   },
   {
     icon: <DiJavascript />,
-    title: 'Mobile App Development',
+    title: 'Software Development',
     description:
-      'I throw myself down among the tall grass by the stream as I lie close to the earth.',
+      'Developing software with modern Js, ES6 ... ESNext, design patterns and best practices',
+    color: '#f7a614',
   },
 ];
 
 export default function ServiceItem({ item, column }) {
-  console.log(column, item);
   const ContentItems = ServiceList.slice(0, item);
   return (
     <>
@@ -53,7 +57,9 @@ export default function ServiceItem({ item, column }) {
           <div className={`${column}`} key={i}>
             <a href="/service-details">
               <div className="service service__style--2">
-                <div className="icon">{val.icon}</div>
+                <Icon className={`icon`} color={val.color}>
+                  {val.icon}
+                </Icon>
                 <div className="content">
                   <h3 className="title">{val.title}</h3>
                   <p>{val.description}</p>

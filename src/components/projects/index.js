@@ -1,5 +1,12 @@
 import React from 'react';
-import { Container, Div, Row, Col } from './styles/projects';
+import {
+  Container,
+  Div,
+  Row,
+  Col,
+  Thumbnail,
+  Background,
+} from './styles/projects';
 
 export default function Projects({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
@@ -13,4 +20,28 @@ Projects.Row = function ProjectsRow({ children, ...restProps }) {
 };
 Projects.Col = function ProjectsCol({ children, ...restProps }) {
   return <Col {...restProps}>{children}</Col>;
+};
+Projects.Thumbnail = function ProjectsThumbnail({
+  url,
+  children,
+  ...restProps
+}) {
+  return (
+    <Thumbnail url={url} {...restProps}>
+      {children}
+    </Thumbnail>
+  );
+};
+
+Projects.Background = function ProjectsBackground({
+  url,
+  children,
+  ...restProps
+}) {
+  return (
+    <Background url={url} {...restProps}>
+      {children}
+      <h2>{url}</h2>
+    </Background>
+  );
 };

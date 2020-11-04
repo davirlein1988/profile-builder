@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Scrollspy from 'react-scrollspy';
 import {
   Container,
@@ -43,13 +43,21 @@ HeaderTree.Nav = function HeaderTreeNav({
   children,
   ...restProps
 }) {
-  console.log(items);
+  console.log(currentClassName);
   return (
-    <Nav {...restProps}>
-      <Scrollspy items={['']} currentClassName offset {...restProps}>
+    <Nav {...restProps} className="mainmenunav d-lg-block ml--50">
+      <Scrollspy
+        className="mainmenu"
+        items={items}
+        currentClassName={currentClassName}
+        offset={offset}
+        {...restProps}
+      >
         {items.map((item) => (
           <ListItem key={item}>
-            <Link href={`#${item}`}>{capitalize(item)}</Link>{' '}
+            <Link className={currentClassName} href={`#${item}`}>
+              {capitalize(item)}
+            </Link>{' '}
           </ListItem>
         ))}
       </Scrollspy>

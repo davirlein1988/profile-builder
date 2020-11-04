@@ -48,8 +48,9 @@ Slidder.Loop = function SlidderLoop({
   return (
     <Title className={titleClass}>
       {
-        (text,
-        (
+        <>
+          {text}
+          <br></br>
           <TextLoop>
             {items.map((title, i) => (
               <span key={i} {...restProps}>
@@ -57,7 +58,7 @@ Slidder.Loop = function SlidderLoop({
               </span>
             ))}
           </TextLoop>
-        ))
+        </>
       }
     </Title>
   );

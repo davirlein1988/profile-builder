@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   FaTwitter,
   FaInstagram,
@@ -35,6 +35,34 @@ export function NavigationContainer({ children, ...restProps }) {
       document.querySelector('.header-wrapper').classList.toggle('menu-open'),
     closeMenuTrigger = () =>
       document.querySelector('.header-wrapper').classList.remove('menu-open');
+  useEffect(() => {
+    window.addEventListener('load', function () {
+      console.log('All assets are loaded');
+    });
+
+    window.addEventListener('scroll', function () {
+      let value = window.scrollY;
+      if (value > 100) {
+        console.log('Scroll', value);
+        document.querySelector('.header--fixed').classList.add('sticky');
+      } else {
+        console.log('Scroll', value);
+        document.querySelector('.header--fixed').classList.remove('sticky');
+      }
+    });
+
+    const elements = document.querySelectorAll('.has-droupdown > a');
+    for (let i in elements) {
+      if (elements.hasOwnProperty(i)) {
+        elements[i].onclick = function () {
+          this.parentElement
+            .querySelector('.submenu')
+            .classList.toggle('active');
+          this.classList.toggle('open');
+        };
+      }
+    }
+  }, []);
   return (
     <HeaderTree
       {...restProps}
@@ -46,7 +74,6 @@ export function NavigationContainer({ children, ...restProps }) {
             <HeaderTree.Link href="/">{logoUrl}</HeaderTree.Link>
           </HeaderTree.Box>
           <HeaderTree.Nav
-            className="mainmenu"
             items={['home', 'about', 'service', 'portfolio', 'blog', 'contact']}
             currentClassName="is-current"
             offset={-200}

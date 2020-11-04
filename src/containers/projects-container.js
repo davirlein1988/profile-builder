@@ -7,31 +7,50 @@ const projects = [
     image: 'image-1',
     category: 'Front End',
     title: 'Portfolio Builder for Professionals',
+    link:
+      'https://davirlein-porfolio-bucket.s3-sa-east-1.amazonaws.com/uploads/analytics-3088958_640.jpg',
   },
   {
     image: 'image-2',
     category: 'Backend Development',
     title: 'API for Porfolio Builder with Node and AWS',
+    link:
+      'https://davirlein-porfolio-bucket.s3-sa-east-1.amazonaws.com/uploads/ipad-605439_640.jpg',
   },
   {
     image: 'image-3',
     category: 'Development',
     title: 'Tackle the Interview questions, Algorithms and Data structures',
+    link:
+      'https://davirlein-porfolio-bucket.s3-sa-east-1.amazonaws.com/uploads/blue-2137333_640.jpg',
   },
   {
     image: 'image-4',
     category: 'Full Stack Development',
     title: 'Could we teach Spanish people how to code for free?',
+    link:
+      'https://davirlein-porfolio-bucket.s3-sa-east-1.amazonaws.com/uploads/apartment-1899964_640.jpg',
   },
   {
     image: 'image-3',
     category: 'Going back to C',
     title: 'Some review of network implementations in C',
+    link:
+      'https://davirlein-porfolio-bucket.s3-sa-east-1.amazonaws.com/uploads/software-3682509_640.jpg',
   },
   {
     image: 'image-4',
     category: 'Backend',
     title: 'Nodejs uptime monitor',
+    link:
+      'https://davirlein-porfolio-bucket.s3-sa-east-1.amazonaws.com/uploads/cyber-glasses-1938449_640.jpg',
+  },
+  {
+    image: 'image-4',
+    category: 'Front-End',
+    title: 'css flexbox and grid system',
+    link:
+      'https://davirlein-porfolio-bucket.s3-sa-east-1.amazonaws.com/uploads/swimming-828795_640.jpg',
   },
 ];
 export function ProjectsContainer() {
@@ -58,8 +77,14 @@ export function ProjectsContainer() {
                   <div className="col-lg-4 col-md-6 col-sm-6 col-12" key={i}>
                     <div className={`portfolio text-center mt--40`}>
                       <div className="thumbnail-inner">
-                        <div className={`thumbnail ${val.image}`}></div>
-                        <div className={`bg-blr-image ${val.image}`}></div>
+                        <Projects.Thumbnail
+                          className="thumbnail"
+                          url={val.link}
+                        ></Projects.Thumbnail>
+                        <Projects.Background
+                          className=""
+                          url={val.link}
+                        ></Projects.Background>
                       </div>
                       <div className="content">
                         <div className="inner">
