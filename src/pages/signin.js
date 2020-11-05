@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { Auth } from 'aws-amplify';
 import { HeaderContainer } from '../containers/header';
 import { FooterProfileContainer } from '../containers/profile-footer';
 import * as ROUTES from '../constants/routes';
@@ -6,13 +8,24 @@ import * as ROUTES from '../constants/routes';
 // import { FirebaseContext } from '../context/firebase';
 import { Form } from '../components';
 const Signin = () => {
-  const [emailAddres, setEmailAddress] = useState(''),
+  const history = useHistory(),
+    [username, setUsername] = useState(''),
     [password, setPassword] = useState(''),
     [error, setError] = useState(''),
-    isInvalid = password === '' || emailAddres === '',
-    handleSignin = (event) => {
+    isInvalid = password === '' || username === '',
+    handleSignin = async (event) => {
       event.preventDefault();
-      console.log(emailAddres, password);
+      try {
+        const user = await Auth.signIn(username, password);
+        history.push('/profile');
+        localStorage.setItem('current_user', JSON.stringify(user));
+      } catch (error) {
+        let err = null;
+        !error.message ? (err = { message: error }) : (err = error);
+        setUsername('');
+        setPassword('');
+        setError(err.message);
+      }
     };
   return (
     <>
@@ -22,9 +35,9 @@ const Signin = () => {
           {error && <Form.Error>{error}</Form.Error>}
           <Form.Base onSubmit={handleSignin} method="POST">
             <Form.Input
-              placeholder="Email address"
-              value={emailAddres}
-              onChange={({ target }) => setEmailAddress(target.value)}
+              placeholder="Username"
+              value={username}
+              onChange={({ target }) => setUsername(target.value)}
               autocomple="off"
             />
             <Form.Input
