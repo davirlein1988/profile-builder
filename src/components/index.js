@@ -13,3 +13,4 @@ export { default as ProfileTabs } from './tabs';
 export { default as PageHelmet } from './helmet';
 export { default as HeaderTree } from './header-tree';
 export { default as Slidder } from './slidder';
+export { default as Form } from './form';
