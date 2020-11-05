@@ -43,7 +43,6 @@ HeaderTree.Nav = function HeaderTreeNav({
   children,
   ...restProps
 }) {
-  console.log(currentClassName);
   return (
     <Nav {...restProps} className="mainmenunav d-lg-block ml--50">
       <Scrollspy

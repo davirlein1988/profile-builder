@@ -1,18 +1,46 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { Auth } from 'aws-amplify';
 import { HeaderContainer } from '../containers/header';
 import { FooterProfileContainer } from '../containers/profile-footer';
 import * as ROUTES from '../constants/routes';
 import { Form } from '../components';
 
 const Signup = () => {
-  const [firstName, setFirstName] = useState(''),
+  const history = useHistory(),
+    [username, setUsername] = useState(''),
     [emailAddres, setEmailAddress] = useState(''),
     [password, setPassword] = useState(''),
+    [passwordConfirm, setPasswordConfirm] = useState(''),
     [error, setError] = useState(''),
-    isInvalid = firstName === '' || password === '' || emailAddres === '',
-    handleSignup = (event) => {
+    isInvalid =
+      username === '' ||
+      password === '' ||
+      emailAddres === '' ||
+      password !== passwordConfirm,
+    handleSignup = async (event) => {
       event.preventDefault();
-      console.log(emailAddres, password);
+      try {
+        const response = await Auth.signUp({
+          username,
+          password,
+          attributes: {
+            email: emailAddres,
+          },
+        });
+        window.flash('An email confirmation has been sent', 'success');
+        console.log('REsponse:', response);
+        history.push('/');
+      } catch (error) {
+        let err = null;
+        !error.message ? (err = { message: error }) : (err = error);
+        setUsername('');
+        setEmailAddress('');
+        setPassword('');
+        setPasswordConfirm('');
+        setError(err.message);
+        window.flash('An email confirmation has been sent', 'error');
+      }
     };
   return (
     <>
@@ -22,9 +50,9 @@ const Signup = () => {
           {error && <Form.Error>{error}</Form.Error>}
           <Form.Base onSubmit={handleSignup} method="POST">
             <Form.Input
-              placeholder="Full Name"
-              value={firstName}
-              onChange={({ target }) => setFirstName(target.value)}
+              placeholder="Username"
+              value={username}
+              onChange={({ target }) => setUsername(target.value)}
             />
             <Form.Input
               placeholder="Email address"
@@ -38,6 +66,13 @@ const Signup = () => {
               autocomple="off"
               value={password}
               onChange={({ target }) => setPassword(target.value)}
+            />
+            <Form.Input
+              type="password"
+              placeholder="Password Confirmation"
+              autocomple="off"
+              value={passwordConfirm}
+              onChange={({ target }) => setPasswordConfirm(target.value)}
             />
             <Form.Submit disabled={isInvalid} type="submit">
               Sign Up

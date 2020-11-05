@@ -11,7 +11,6 @@ export function NewsContainer() {
     } = await axios.get(
       `http://newsapi.org/v2/everything?q=javascript&q=technology&from=2020-10-04&sortBy=publishedAt&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`
     );
-    console.log(process.env);
     setItems(articles);
   }
   useEffect(() => {
