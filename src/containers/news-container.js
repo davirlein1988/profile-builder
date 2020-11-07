@@ -34,7 +34,7 @@ export function NewsContainer() {
           </News.Row>
           <News.Row className="row align-items-end">
             <News.Items className="row mt--60 mt_sm--40">
-              {items.map((item, i) => (
+              {items.map((item = {}, i) => (
                 <News.Col className="col-lg-4 col-md-6 col-12" key={i}>
                   <News.Box className="blog blog-style--1">
                     <div className="thumbnail">
@@ -48,7 +48,7 @@ export function NewsContainer() {
                     </div>
                     <div className="content">
                       <p className="blogtype">
-                        {item && item.title.substring(1, 10)}
+                        {item.title && item.title.substring(1, 10)}
                       </p>
                       <h4 className="title">
                         <a href="/blog-details">
