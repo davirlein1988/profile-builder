@@ -1,35 +1,80 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { IsUserRedirect, ProtectedRoute } from './helpers/routes';
+
 import * as ROUTES from './constants/routes';
 import Bus from './utils/bus';
-import { Home, SignIn, SignUp, Blog, About, Profile } from './pages';
+import { Home, SignIn, SignUp, Blog, About, Profile, BlogEdit } from './pages';
 import { Flash } from './components';
 window.flash = (message, type = 'success') =>
   Bus.emit('flash', { message, type });
 export default function App() {
+  const user = null;
   return (
     <>
       <Flash />
       <Router>
         <Switch>
-          <Route exact path={`${ROUTES.HOME}`}>
+          <IsUserRedirect
+            exact
+            user={user}
+            loggedInPath={ROUTES.HOME}
+            path={ROUTES.HOME}
+          >
             <Home />
-          </Route>
-          <Route exact path={`${ROUTES.SIGN_IN}`}>
+          </IsUserRedirect>
+          <IsUserRedirect
+            exact
+            user={user}
+            loggedInPath={ROUTES.HOME}
+            path={ROUTES.SIGN_IN}
+          >
             <SignIn />
-          </Route>
-          <Route exact path={`${ROUTES.SIGN_UP}`}>
+          </IsUserRedirect>
+          <IsUserRedirect
+            exact
+            user={user}
+            loggedInPath={ROUTES.HOME}
+            path={ROUTES.SIGN_UP}
+          >
             <SignUp />
-          </Route>
-          <Route exact path={`${ROUTES.BLOG}`}>
+          </IsUserRedirect>
+          <IsUserRedirect
+            exact
+            user={user}
+            loggedInPath={ROUTES.BLOG}
+            path={ROUTES.BLOG}
+          >
             <Blog />
-          </Route>
-          <Route exact path={`${ROUTES.ABOUT}`}>
-            <About />
-          </Route>
-          <Route exact path={`${ROUTES.PROFILE}`}>
+          </IsUserRedirect>
+          <IsUserRedirect
+            exact
+            user={user}
+            loggedInPath={ROUTES.HOME}
+            path={ROUTES.PROFILE}
+          >
             <Profile />
-          </Route>
+          </IsUserRedirect>
+          <IsUserRedirect
+            exact
+            user={user}
+            loggedInPath={ROUTES.HOME}
+            path={ROUTES.ABOUT}
+          >
+            <About />
+          </IsUserRedirect>
+          <ProtectedRoute user={user} path={ROUTES.BLOG_EDIT}>
+            <BlogEdit exact />
+          </ProtectedRoute>
+          <ProtectedRoute path={ROUTES.PORTFOLIO_EDIT}>
+            <p>Edit portfolio</p>
+          </ProtectedRoute>
+          <ProtectedRoute path={ROUTES.PROFILE_EDIT}>
+            <p>Edit profile</p>
+          </ProtectedRoute>
+          <ProtectedRoute path={ROUTES.RESOURCE_EDIT}>
+            <p>edit resource</p>
+          </ProtectedRoute>
         </Switch>
       </Router>
     </>

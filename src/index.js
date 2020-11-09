@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
+import { Auth as auth } from 'aws-amplify';
 
 import reduxThunk from 'redux-thunk';
 import Amplify from 'aws-amplify';
@@ -11,6 +12,7 @@ import reducers from './reducers';
 import './index.scss';
 import App from './app';
 import { GlobalStyles } from './global-styles';
+import { AwsContext } from './context/aws';
 
 Amplify.configure({
   Auth: {
@@ -29,8 +31,10 @@ const store = createStore(
 
 render(
   <Provider store={store}>
-    <GlobalStyles />
-    <App />
+    <AwsContext.Provider value={auth}>
+      <GlobalStyles />
+      <App />
+    </AwsContext.Provider>
   </Provider>,
   document.getElementById('root')
 );
