@@ -17,7 +17,7 @@ const Signin = () => {
       event.preventDefault();
       try {
         const user = await Auth.signIn(username, password);
-        history.push('/profile');
+        history.push('/');
         localStorage.setItem('current_user', JSON.stringify(user));
       } catch (error) {
         let err = null;

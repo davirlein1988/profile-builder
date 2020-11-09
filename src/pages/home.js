@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { FooterContainer } from '../containers/footer';
-// import { JumboContainer } from '../containers/jumbotron';
 import { HeaderContainer } from '../containers/header';
 import { Feature } from '../components';
 import { FooterProfileContainer } from '../containers/profile-footer';

@@ -4,3 +4,4 @@ export { default as SignUp } from './signup';
 export { default as About } from './about';
 export { default as Blog } from './blog';
 export { default as Profile } from './profile';
+export { default as BlogEdit } from './blog-edit';
