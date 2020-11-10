@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { HeaderContainer } from '../containers/header';
-import { Feature } from '../components';
+import { Feature, HeaderTree } from '../components';
 import { FooterProfileContainer } from '../containers/profile-footer';
 import PageHelmet from '../components/helmet/index';
 const Home = () => {
@@ -18,6 +18,7 @@ const Home = () => {
           </Feature.SubTitle>
         </Feature>
       </HeaderContainer>
+      <HeaderTree></HeaderTree>
       <FooterProfileContainer />
     </>
   );
