@@ -3,9 +3,11 @@ import React from 'react';
 import { HeaderContainer } from '../containers/header';
 import { Feature } from '../components';
 import { FooterProfileContainer } from '../containers/profile-footer';
+import PageHelmet from '../components/helmet/index';
 const Home = () => {
   return (
     <>
+      <PageHelmet pageTitle="Our Business" />
       <HeaderContainer>
         <Feature>
           <Feature.Title>Tell The world about you</Feature.Title>
