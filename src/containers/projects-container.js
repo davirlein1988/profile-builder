@@ -107,7 +107,10 @@ export function ProjectsContainer() {
             <div className="row">
               <div className="col-lg-12">
                 <div className="view-more-btn mt--60 mt_sm--30 text-center">
-                  <a className="rn-button-style--2 btn-solid" href="/blog">
+                  <a
+                    className="rn-button-style--2 btn-solid"
+                    href="/portfolios/34" // id will be provided for current user
+                  >
                     <span>View More</span>
                   </a>
                 </div>

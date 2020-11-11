@@ -1,7 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import ScrollToTop from 'react-scroll-up';
+import { FiChevronUp } from 'react-icons/fi';
 
-import { HeaderContainer } from '../containers/header';
-import { Feature, SlideShow } from '../components';
+import { SlideShow } from '../components';
 import { FooterProfileContainer } from '../containers/profile-footer';
 import PageHelmet from '../components/helmet/index';
 import Slider from 'react-slick';
@@ -129,6 +130,11 @@ const Home = () => {
       <ServiceContainer />
       <ProjectsContainer />
       <FooterProfileContainer />
+      <div className="backto-top">
+        <ScrollToTop showUnder={160}>
+          <FiChevronUp />
+        </ScrollToTop>
+      </div>
     </>
   );
 };

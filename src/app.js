@@ -4,8 +4,18 @@ import { IsUserRedirect, ProtectedRoute } from './helpers/routes';
 
 import * as ROUTES from './constants/routes';
 import Bus from './utils/bus';
-import { Home, SignIn, SignUp, Blog, About, Profile, BlogEdit } from './pages';
+import {
+  Home,
+  SignIn,
+  SignUp,
+  Blog,
+  About,
+  Profile,
+  BlogEdit,
+  PageNotFound,
+} from './pages';
 import { Flash } from './components';
+
 window.flash = (message, type = 'success') =>
   Bus.emit('flash', { message, type });
 export default function App() {
@@ -75,6 +85,7 @@ export default function App() {
           <ProtectedRoute path={ROUTES.RESOURCE_EDIT}>
             <p>edit resource</p>
           </ProtectedRoute>
+          <Route component={PageNotFound} />
         </Switch>
       </Router>
     </>
