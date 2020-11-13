@@ -1,4 +1,6 @@
 import React from 'react';
+import ScrollToTop from 'react-scroll-up';
+import { FiChevronUp } from 'react-icons/fi';
 import { FooterProfileContainer } from '../containers/profile-footer';
 import { ContactContainer } from '../containers/contact-container';
 import { NewsContainer } from '../containers/news-container';
@@ -86,6 +88,11 @@ export default function Profile() {
       <ProjectsContainer />
       <NewsContainer />
       <ContactContainer />
+      <div className="backto-top">
+        <ScrollToTop showUnder={160}>
+          <FiChevronUp />
+        </ScrollToTop>
+      </div>
       <FooterProfileContainer />
     </div>
   );

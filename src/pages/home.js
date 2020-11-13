@@ -67,16 +67,6 @@ const Home = () => {
   return (
     <>
       <PageHelmet pageTitle="Our Business" />
-      {/* <HeaderContainer>
-        <Feature>
-          <Feature.Title>Tell The world about you</Feature.Title>
-          <Feature.SubTitle>
-            Tell us what you want the world to know about you do, showcase your
-            work, experiences, portfolio and we will take care of making it look
-            great.
-          </Feature.SubTitle>
-        </Feature>
-      </HeaderContainer> */}
       <NavigationContainer />
       <SlideShow id="about" className="slider-wrapper">
         <SlideShow.Box className="slider-activation">
