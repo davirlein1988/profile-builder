@@ -8,3 +8,5 @@ export const BLOG_EDIT = '/blog/:id/edit';
 export const PORTFOLIO_EDIT = '/portfolio/:id/edit';
 export const RESOURCE_EDIT = 'resource/:id/edit';
 export const ABOUT = '/about';
+export const FORGOT_PASSWORD = '/forgot-password';
+export const CONFIRMATION_PASSWORD = '/confirmation_password';

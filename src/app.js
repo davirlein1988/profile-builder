@@ -13,6 +13,8 @@ import {
   Profile,
   BlogEdit,
   PageNotFound,
+  ForgotPassword,
+  ConfirmationPassword,
 } from './pages';
 import { Flash } from './components';
 
@@ -48,6 +50,22 @@ export default function App() {
             path={ROUTES.SIGN_UP}
           >
             <SignUp />
+          </IsUserRedirect>
+          <IsUserRedirect
+            exact
+            user={user}
+            loggedInPath={ROUTES.HOME}
+            path={ROUTES.FORGOT_PASSWORD}
+          >
+            <ForgotPassword />
+          </IsUserRedirect>
+          <IsUserRedirect
+            exact
+            user={user}
+            loggedInPath={ROUTES.HOME}
+            path={ROUTES.CONFIRMATION_PASSWORD}
+          >
+            <ConfirmationPassword />
           </IsUserRedirect>
           <IsUserRedirect
             exact
