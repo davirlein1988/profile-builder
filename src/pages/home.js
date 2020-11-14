@@ -10,6 +10,8 @@ import { slideSlick } from '../constants/settings';
 import { NavigationContainer } from '../containers/navigation-container';
 import { ServiceContainer } from '../containers/service-container';
 import { ProjectsContainer } from '../containers/projects-container';
+import Feature from '../components/feature/index';
+import { HeaderContainer } from '../containers/header';
 
 const SlideList = [
   {
@@ -68,6 +70,19 @@ const Home = () => {
     <>
       <PageHelmet pageTitle="Our Business" />
       <NavigationContainer />
+      <HeaderContainer>
+        <Feature>
+          <Feature.Title>
+            Customize your profile the in your terms
+          </Feature.Title>
+          <Feature.SubTitle>
+            Feel free to include, contact information, selecct the pages you
+            want to have, select the UI components to include, showcase your
+            portfolio, show your works and make blog publications. You can set
+            up a contact form to get contact strwight to your inbox.
+          </Feature.SubTitle>
+        </Feature>
+      </HeaderContainer>
       <SlideShow id="about" className="slider-wrapper">
         <SlideShow.Box className="slider-activation">
           <Slider className="rn-slick-dot dot-light" {...slideSlick}>
