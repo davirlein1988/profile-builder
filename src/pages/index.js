@@ -5,4 +5,6 @@ export { default as About } from './about';
 export { default as Blog } from './blog';
 export { default as Profile } from './profile';
 export { default as BlogEdit } from './blog-edit';
+export { default as ForgotPassword } from './forgot-password';
+export { default as ConfirmationPassword } from './confirmation-password';
 export { default as PageNotFound } from './page-not-found';
