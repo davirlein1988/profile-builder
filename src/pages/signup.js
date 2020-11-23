@@ -4,7 +4,7 @@ import { Auth } from 'aws-amplify';
 import { HeaderContainer } from '../containers/header';
 import { FooterProfileContainer } from '../containers/profile-footer';
 import * as ROUTES from '../constants/routes';
-import { Form } from '../components';
+import { Captcha, Form } from '../components';
 
 const Signup = () => {
   const history = useHistory(),
@@ -12,12 +12,17 @@ const Signup = () => {
     [emailAddres, setEmailAddress] = useState(''),
     [password, setPassword] = useState(''),
     [passwordConfirm, setPasswordConfirm] = useState(''),
+    [captcha, setCaptcha] = useState(''),
     [error, setError] = useState(''),
     isInvalid =
       username === '' ||
       password === '' ||
       emailAddres === '' ||
-      password !== passwordConfirm,
+      password !== passwordConfirm ||
+      !captcha,
+    handleCaptcha = (value) => {
+      setCaptcha(value);
+    },
     handleSignup = async (event) => {
       event.preventDefault();
       try {
@@ -74,6 +79,7 @@ const Signup = () => {
               value={passwordConfirm}
               onChange={({ target }) => setPasswordConfirm(target.value)}
             />
+            <Captcha handleChange={handleCaptcha} />
             <Form.Submit disabled={isInvalid} type="submit">
               Sign Up
             </Form.Submit>

@@ -16,3 +16,4 @@ export { default as Slidder } from './slidder';
 export { default as Form } from './form';
 export { default as Flash } from './flash';
 export { default as SlideShow } from './slideshow';
+export { default as Captcha } from './auth/captcha';
