@@ -19,8 +19,9 @@ const Signup = () => {
       password === '' ||
       emailAddres === '' ||
       password !== passwordConfirm ||
-      !captcha,
+      captcha === '',
     handleCaptcha = (value) => {
+      console.log(value);
       setCaptcha(value);
     },
     handleSignup = async (event) => {
@@ -32,9 +33,14 @@ const Signup = () => {
           attributes: {
             email: emailAddres,
           },
+          validationData: [
+            {
+              Name: 'recaptchaToken',
+              Value: captcha,
+            },
+          ],
         });
         window.flash('An email confirmation has been sent', 'success');
-        console.log('REsponse:', response);
         history.push('/');
       } catch (error) {
         let err = null;
@@ -44,7 +50,7 @@ const Signup = () => {
         setPassword('');
         setPasswordConfirm('');
         setError(err.message);
-        window.flash('An email confirmation has been sent', 'error');
+        window.flash(`${error.message}`, 'error');
       }
     };
   return (
