@@ -18,7 +18,7 @@ export default function Flash({ children, ...restProps }) {
       setType(type);
       setTimeout(() => {
         setVisibility(false);
-      }, 10000000);
+      }, 3000);
     });
   }, []);
 
