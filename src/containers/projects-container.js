@@ -4,6 +4,7 @@ import { Projects } from '../components';
 
 const projects = [
   {
+    id: '4561',
     image: 'image-1',
     category: 'Front End',
     title: 'Portfolio Builder for Professionals',
@@ -11,6 +12,7 @@ const projects = [
       'https://davirlein-porfolio-bucket.s3-sa-east-1.amazonaws.com/uploads/analytics-3088958_640.jpg',
   },
   {
+    id: '4562',
     image: 'image-2',
     category: 'Backend Development',
     title: 'API for Porfolio Builder with Node and AWS',
@@ -18,6 +20,7 @@ const projects = [
       'https://davirlein-porfolio-bucket.s3-sa-east-1.amazonaws.com/uploads/ipad-605439_640.jpg',
   },
   {
+    id: '4563',
     image: 'image-3',
     category: 'Development',
     title: 'Tackle the Interview questions, Algorithms and Data structures',
@@ -25,6 +28,7 @@ const projects = [
       'https://davirlein-porfolio-bucket.s3-sa-east-1.amazonaws.com/uploads/blue-2137333_640.jpg',
   },
   {
+    id: '4564',
     image: 'image-4',
     category: 'Full Stack Development',
     title: 'Could we teach Spanish people how to code for free?',
@@ -32,6 +36,7 @@ const projects = [
       'https://davirlein-porfolio-bucket.s3-sa-east-1.amazonaws.com/uploads/apartment-1899964_640.jpg',
   },
   {
+    id: '4565',
     image: 'image-3',
     category: 'Going back to C',
     title: 'Some review of network implementations in C',
@@ -39,6 +44,7 @@ const projects = [
       'https://davirlein-porfolio-bucket.s3-sa-east-1.amazonaws.com/uploads/software-3682509_640.jpg',
   },
   {
+    id: '4566',
     image: 'image-4',
     category: 'Backend',
     title: 'Nodejs uptime monitor',
@@ -46,6 +52,7 @@ const projects = [
       'https://davirlein-porfolio-bucket.s3-sa-east-1.amazonaws.com/uploads/cyber-glasses-1938449_640.jpg',
   },
   {
+    id: '4567',
     image: 'image-4',
     category: 'Front-End',
     title: 'css flexbox and grid system',
@@ -90,10 +97,15 @@ export function ProjectsContainer() {
                         <div className="inner">
                           <p>{val.category}</p>
                           <h4>
-                            <a href="/portfolio-details">{val.title}</a>
+                            <a href={`/portfolio-details/${val.id}`}>
+                              {val.title}
+                            </a>
                           </h4>
                           <div className="portfolio-button">
-                            <a className="rn-btn" href="/portfolio-details">
+                            <a
+                              className="rn-btn"
+                              href={`/portfolio-details/${val.id}`}
+                            >
                               View Details
                             </a>
                           </div>
@@ -109,7 +121,7 @@ export function ProjectsContainer() {
                 <div className="view-more-btn mt--60 mt_sm--30 text-center">
                   <a
                     className="rn-button-style--2 btn-solid"
-                    href="/portfolios/34" // id will be provided for current user
+                    href="#portfolios" // id will be provided for current user
                   >
                     <span>View More</span>
                   </a>
