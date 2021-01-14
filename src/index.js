@@ -6,7 +6,6 @@ import { Auth as auth } from 'aws-amplify';
 
 import reduxThunk from 'redux-thunk';
 import Amplify from 'aws-amplify';
-import config from './config.json';
 import reducers from './reducers';
 
 import './index.scss';
@@ -17,9 +16,9 @@ import { AwsContext } from './context/aws';
 Amplify.configure({
   Auth: {
     mandatorySignId: true,
-    region: config.cognito.REGION,
-    userPoolId: config.cognito.USER_POOL_ID,
-    userPoolWebClientId: config.cognito.APP_CLIENT_ID,
+    region: process.env.REACT_APP_REGION,
+    userPoolId: process.env.REACT_APP_USER_POOL_ID,
+    userPoolWebClientId: process.env.REACT_APP_APP_CLIENT_ID,
   },
 });
 
