@@ -8,7 +8,6 @@ export function HeaderContainer({ children }) {
     <Header>
       <Header.Frame>
         <Header.Logo to={ROUTES.HOME} alt="Profile Builder" src={logo} />
-        <Header.ButtonLink to={ROUTES.SIGN_IN}>sign in</Header.ButtonLink>
       </Header.Frame>
       {children}
     </Header>

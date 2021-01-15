@@ -25,8 +25,8 @@ const SocialShare = [
 export function NavigationContainer({ children, ...restProps }) {
   const logoUrl = (
       <img
-        src="/assets/images/logo/logo-symbol-dark.png"
-        alt="Digital Agency"
+        src="https://davirlein-porfolio-bucket.s3-sa-east-1.amazonaws.com/logos/Imagenylogo.svg"
+        alt="Davirlein Prada"
       />
     ),
     actionLink = `${process.env.PUBLIC_URL}#contact`,
@@ -68,7 +68,7 @@ export function NavigationContainer({ children, ...restProps }) {
       <HeaderTree.Wrapper className="header-wrapper">
         <HeaderTree.Wrapper className="header-left d-flex align-items-center">
           <HeaderTree.Box className="logo">
-            <HeaderTree.Link href="/">{logoUrl}</HeaderTree.Link>
+            <HeaderTree.Link href="/profile">{logoUrl}</HeaderTree.Link>
           </HeaderTree.Box>
           <HeaderTree.Nav
             items={['home', 'about', 'service', 'portfolio', 'blog', 'contact']}
