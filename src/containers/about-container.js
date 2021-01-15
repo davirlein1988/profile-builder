@@ -15,7 +15,7 @@ export function AboutContainer() {
                 <About.Box className="thumbnail">
                   <img
                     className="w-100"
-                    src="/assets/images/about/lein.jpeg"
+                    src="https://davirlein-porfolio-bucket.s3-sa-east-1.amazonaws.com/logos/lein.jpeg"
                     alt="About Images"
                   />
                 </About.Box>
