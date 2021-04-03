@@ -72,9 +72,7 @@ const Home = () => {
       <NavigationContainer />
       <HeaderContainer>
         <Feature>
-          <Feature.Title>
-            Customize your profile the in your terms
-          </Feature.Title>
+          <Feature.Title>Customize profile in your own terms</Feature.Title>
           <Feature.SubTitle>
             Feel free to include, contact information, selecct the pages you
             want to have, select the UI components to include, showcase your

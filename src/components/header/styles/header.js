@@ -7,7 +7,7 @@ export const Background = styled.div`
   background: url(${({ src }) =>
       src
         ? `${src}`
-        : `${process.env.PUBLIC_URL}/assets/images/bg/aoteren.jpg`})
+        : `${process.env.PUBLIC_URL}/assets/images/bg/giphy-large.gif`})
     top left / cover no-repeat;
   @media (max-width: 1100px) {
     ${({ dontShowOnSmallViewPort }) =>

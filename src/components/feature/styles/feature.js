@@ -1,4 +1,4 @@
-import styled from "styled-components/macro";
+import styled from 'styled-components/macro';
 
 export const Container = styled.div`
   display: flex;
@@ -6,13 +6,14 @@ export const Container = styled.div`
   border-bottom: 8px solid #222;
   text-align: center;
   padding: 165px 45px;
+  min-height: 90vh;
 `;
 
 export const Title = styled.div`
-  color: white;
-  max-width: 640px;
-  font-size: 50px;
-  font-weight: 500;
+  color: #f9004d;
+  max-width: 100%;
+  font-size: 60px;
+  font-weight: 900;
   margin: auto;
 
   @media (max-width: 600px) {
@@ -20,11 +21,11 @@ export const Title = styled.div`
   }
 `;
 export const SubTitle = styled.div`
-  color: white;
-  max-width: 640px;
+  color: #c6c9d8;
+  max-width: 90%;
   font-size: 26px;
   font-weight: normal;
-  margin: 16px auto;
+  margin: 3rem auto;
 
   @media (max-width: 600px) {
     font-size: 18px;
