@@ -44,17 +44,17 @@ export default function Profile() {
                         titleClass="title"
                         text="Hi, This is Lein..."
                         items={[
-                          'RoR Developer',
                           'Js Full Stack Developer',
                           'NodeJS Developer',
                           'English/Spanish/German Translator',
                           'Front-End Developer',
                           'ReactJs - React-Native Dev',
                           'VueJS - Vuex - Vuetify',
+                          'RoR Developer',
                         ]}
                       />
                       <Slidder.SubTitle>
-                        Based in Bogotá DC, Remotely
+                        Based in São Paulo, Work Remotely
                       </Slidder.SubTitle>
                       {value.description ? (
                         <Slidder.Text className="description">

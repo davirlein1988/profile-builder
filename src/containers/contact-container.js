@@ -24,7 +24,7 @@ export function ContactContainer() {
                   <Contact.Text className="description">
                     I am available for freelance work. Connect with me via
                     phone:
-                    <a href="tel:+573152503647">3152503647</a> or email:
+                    <a href="tel:+5545988043196">45988043196</a> or email:
                     <a href="mailto:lein.davir@gmail.com">
                       lein.davir@gmail.com
                     </a>
