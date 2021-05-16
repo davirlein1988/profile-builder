@@ -23,7 +23,7 @@ export function ServiceContainer() {
           <Service.Row className="row creative-service">
             <Service.Col className="col-lg-12">
               <ServiceItem
-                item="6"
+                item="9"
                 column="col-lg-4 col-md-6 col-sm-6 col-12 text-left"
               />
             </Service.Col>

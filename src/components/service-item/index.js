@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaNodeJs, FaVuejs } from 'react-icons/fa';
 import { DiJavascript } from 'react-icons/di';
-import { SiMongodb, SiReact } from 'react-icons/si';
+import { SiMongodb, SiReact, SiAmazonaws, SiKubernetes } from 'react-icons/si';
 import { FiSmartphone } from 'react-icons/fi';
 import { Icon } from './styles/service-item';
 
@@ -16,7 +16,7 @@ const ServiceList = [
     icon: <FaNodeJs />,
     title: 'Backend Development',
     description:
-      'Uso of NodeJs with Express, mongo, postgresql, redis and elasticsearch',
+      'Use of NodeJs with Express, mongo, postgresql, redis and elasticsearch',
     color: '#43853d',
   },
   {
@@ -45,6 +45,20 @@ const ServiceList = [
     description:
       'Developing software with modern Js, ES6 ... ESNext, design patterns and best practices',
     color: '#f7a614',
+  },
+  {
+    icon: <SiAmazonaws />,
+    title: 'Cloud Solutions',
+    description:
+      'API Gateway, Cognito, Lambda, Route53, Amplify, IAM, Serverless and more',
+    color: '#B46F0A',
+  },
+  {
+    icon: <SiKubernetes />,
+    title: 'Microservices',
+    description:
+      'Leverage the power of microservices with Docker, Kubernetes, Nginx, Redis',
+    color: '#3791E6',
   },
 ];
 

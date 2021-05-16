@@ -8,56 +8,49 @@ const projects = [
     image: 'image-1',
     category: 'Front End',
     title: 'Portfolio Builder for Professionals',
-    link:
-      'https://davirlein-porfolio-bucket.s3-sa-east-1.amazonaws.com/uploads/analytics-3088958_640.jpg',
+    link: 'https://davirlein-porfolio-bucket.s3-sa-east-1.amazonaws.com/uploads/analytics-3088958_640.jpg',
   },
   {
     id: '4562',
     image: 'image-2',
     category: 'Backend Development',
     title: 'API for Porfolio Builder with Node and AWS',
-    link:
-      'https://davirlein-porfolio-bucket.s3-sa-east-1.amazonaws.com/uploads/ipad-605439_640.jpg',
+    link: 'https://davirlein-porfolio-bucket.s3-sa-east-1.amazonaws.com/uploads/ipad-605439_640.jpg',
   },
   {
     id: '4563',
     image: 'image-3',
     category: 'Development',
     title: 'Tackle the Interview questions, Algorithms and Data structures',
-    link:
-      'https://davirlein-porfolio-bucket.s3-sa-east-1.amazonaws.com/uploads/blue-2137333_640.jpg',
+    link: 'https://davirlein-porfolio-bucket.s3-sa-east-1.amazonaws.com/uploads/blue-2137333_640.jpg',
   },
   {
     id: '4564',
     image: 'image-4',
     category: 'Full Stack Development',
     title: 'Could we teach Spanish people how to code for free?',
-    link:
-      'https://davirlein-porfolio-bucket.s3-sa-east-1.amazonaws.com/uploads/apartment-1899964_640.jpg',
+    link: 'https://davirlein-porfolio-bucket.s3-sa-east-1.amazonaws.com/uploads/apartment-1899964_640.jpg',
   },
   {
     id: '4565',
     image: 'image-3',
     category: 'Going back to C',
     title: 'Some review of network implementations in C',
-    link:
-      'https://davirlein-porfolio-bucket.s3-sa-east-1.amazonaws.com/uploads/software-3682509_640.jpg',
+    link: 'https://davirlein-porfolio-bucket.s3-sa-east-1.amazonaws.com/uploads/software-3682509_640.jpg',
   },
   {
     id: '4566',
     image: 'image-4',
     category: 'Backend',
     title: 'Nodejs uptime monitor',
-    link:
-      'https://davirlein-porfolio-bucket.s3-sa-east-1.amazonaws.com/uploads/cyber-glasses-1938449_640.jpg',
+    link: 'https://davirlein-porfolio-bucket.s3-sa-east-1.amazonaws.com/uploads/cyber-glasses-1938449_640.jpg',
   },
   {
     id: '4567',
     image: 'image-4',
     category: 'Front-End',
     title: 'css flexbox and grid system',
-    link:
-      'https://davirlein-porfolio-bucket.s3-sa-east-1.amazonaws.com/uploads/swimming-828795_640.jpg',
+    link: 'https://davirlein-porfolio-bucket.s3-sa-east-1.amazonaws.com/uploads/swimming-828795_640.jpg',
   },
 ];
 export function ProjectsContainer() {
@@ -71,9 +64,9 @@ export function ProjectsContainer() {
                 <Projects.Div className="section-title text-center service-style--3 mb--30 mb_sm--0">
                   <h2 className="title">My Latest Work</h2>
                   <p>
-                    In the last two yaeras I have been focused on the realm of
-                    Javascript I have work as a full time Contractor and in my
-                    free time I have been busy with these gems
+                    For the last three years, I have been focused on the realm
+                    of Javascript. I have work as a full time Contractor and in
+                    my free time I have been busy with these gems
                   </p>
                 </Projects.Div>
               </Projects.Col>
